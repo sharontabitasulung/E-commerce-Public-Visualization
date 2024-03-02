@@ -1,6 +1,5 @@
-Versi numpy: 1.26.4
-Versi pandas: 1.5.1
-Versi SciPy: 1.12.0
-Versi Seaborn: 0.12.1
-Versi Streamlit: 1.31.1
-Versi matplotlib: 3.6.2
+numpy==1.26.4
+pandas==1.3.3
+matplotlib==3.4.3
+seaborn==0.11.2
+streamlit==1.0.0
