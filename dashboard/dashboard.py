@@ -2,10 +2,16 @@ import streamlit as st
 import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
+import os
+
+# Mengonversi path relatif menjadi absolut
+base_path = os.path.dirname(__file__)
+csv_products_path = os.path.join(base_path, 'product_orders.csv')
+csv_combined_path = os.path.join(base_path, 'shipping_cost_and_sales.csv')
 
 # Load data
-df_products_order = pd.read_csv('./product_orders.csv')  
-data_combined = pd.read_csv('./shipping_cost_and_sales.csv')
+df_products_order = pd.read_csv(csv_products_path)  
+data_combined = pd.read_csv(csv_combined_path)
 
 # Define Streamlit app
 def main():
