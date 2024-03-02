@@ -4,8 +4,8 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 
 # Load data
-df_products_order = pd.read_csv('E:/submission/dashboard/product_orders.csv')  
-data_combined = pd.read_csv('E:/submission/dashboard/shipping_cost_and_sales.csv')
+df_products_order = pd.read_csv('./product_orders.csv')  
+data_combined = pd.read_csv('./shipping_cost_and_sales.csv')
 
 # Define Streamlit app
 def main():
@@ -16,7 +16,6 @@ def main():
 
     # Display scatter plot
     st.subheader('Visualize the relationship between shipping cost and sales amount')
-    st.write("Does the cost of shipping goods affect the amount of sales in 2018?")
     st.write("From the visualization results it can be seen that the lower the shipping costs, the higher the goods sold, as for the items with the highest total sales with low shipping costs are beleza_saude")
     plt.figure(figsize=(10, 6))
     sns.scatterplot(data=data_combined, x='freight_value', y='total_penjualan', hue='product_category_name')
@@ -32,7 +31,6 @@ def main():
     category_counts = df_products_order['product_category_name'].value_counts().head(10)
     # Display bar plot
     st.subheader('Top 10 Most Popular Product Categories')
-    st.write("Which products are the top 10 best sellers in sales ?")
     st.write("From the visualization results above, it can be concluded that mapping the 10 highest selling products is one solution to see consumer interest in products so that companies pay attention to producing products with the highest sales, besides that it is a consideration in the future to produce these goods.")
     plt.figure(figsize=(10, 6))
     sns.barplot(x=category_counts.values, y=category_counts.index, palette='viridis')
